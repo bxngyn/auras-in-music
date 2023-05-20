@@ -1,0 +1,28 @@
+{% include "aurabackground.html" %}
+
+{% block main %}
+
+{% if nostalgic_song != NULL %}
+<p class="fadetext" style="color: black; font-size: 30px;"> "{{ nostalgic_song[0]['title'] }}" by {{ nostalgic_song[0]['artist'] }} </p>
+<a target="_blank" rel="noopener noreferrer" href="https://youtube.com/results?search_query={{ nostalgic_song[0]['title'] }} by {{ nostalgic_song[0]['artist'] }}" class="btn btn-outline-dark regtext" style="top: 60%;">Search on YouTube</a>
+
+{% elif sad_song != NULL %}
+<p class="fadetext" style="color: black; font-size: 30px;"> "{{ sad_song[0]['Track_Name'] }}" by {{ sad_song[0]['Artist_Name_s'] }} </p>
+<a target="_blank" rel="noopener noreferrer" href="https://youtube.com/results?search_query={{ sad_song[0]['Track_Name'] }} by {{ sad_song[0]['Artist_Name_s'] }}" class="btn btn-outline-dark regtext" style="top: 60%;">Search on YouTube</a>
+
+{% elif happy_song != NULL %}
+<p class="fadetext" style="color: black; font-size: 30px;"> "{{ happy_song[0]['Track_Name'] }}" by {{ happy_song[0]['Artist_Name_s'] }} </p>
+<a target="_blank" rel="noopener noreferrer" href="https://youtube.com/results?search_query={{ happy_song[0]['Track_Name'] }} by {{ happy_song[0]['Artist_Name_s'] }}" class="btn btn-outline-dark regtext" style="top: 60%;">Search on YouTube</a>
+
+{% elif ok_song != NULL %}
+<p class="fadetext" style="color: black; font-size: 30px;"> "{{ ok_song[0]['Track_Name'] }}" by {{ ok_song[0]['Artist_Name_s'] }} </p>
+<a target="_blank" rel="noopener noreferrer" href="https://youtube.com/results?search_query={{ ok_song[0]['Track_Name'] }} by {{ ok_song[0]['Artist_Name_s'] }}" class="btn btn-outline-dark regtext" style="top: 60%;">Search on YouTube</a>
+
+{% endif %}
+
+<p class="fadetext" style="top: 5%; left: 10%; font-size: 15px; color: #4076C4;"> ps: if you want another <br> song, press refresh </p>
+<button type="button" class="btn btn-outline-dark regtext" onclick="window.history.go(-2)" style="top: 70%;">Go back to homepage</button>
+
+
+
+{% endblock %}

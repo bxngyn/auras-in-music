@@ -1,0 +1,27 @@
+{% include "aurabackground.html" %}
+
+{% block main %}
+
+{% for people in usernames %}
+<p class="fadeinout">hi, {{ people.first_name }}</p>
+{% endfor %}
+
+<p class="fadetext" style="opacity: 0; animation-delay: 4.5s; animation-duration: 4.5s; animation-fill-mode: forwards; top: 50%; left: 50%;">how are you feeling today?</p>
+
+<form action="/happy" method="post" class="aurabtn" style="top:15%; left: 15%;">
+    <button type="submit">happy</button>
+</form>
+
+<form action="/justok" method="post" class="aurabtn" style="top:15%; left: 85%;">
+    <button type="submit">just ok</button>
+</form>
+
+<form action="/nostalgic" method="post" class="aurabtn" style="top: 85%; left: 15%;">
+    <button type="submit">nostalgic</button>
+</form>
+
+<form action="/sad" method="post" class="aurabtn" style="top: 85%; left: 85%;">
+    <button type="submit">sad</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% include "background.html" %}
+
+{% block main %}
+
+<div id="table-wrapper">
+    <table class="table table-striped regtext reglog" style="color: white; font-size: 15px; max-height: 500px; overflow: auto; text-align: center; transform: margin-left: auto; transform: translate(-50%, -120%);">
+        <thead>
+            <tr>
+                <td>Type</td>
+                <td>Song</td>
+                <td>Artist</td>
+                <td>Time</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in history %}
+            <tr>
+                <td>{{ element.type }}</td>
+                <td>{{ element.song }}</td>
+                <td>{{ element.artist }}</td>
+                <td>{{ element.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<button type="button" class="btn btn-outline-dark regtext" onclick="history.back()" style="color: white; top: 5%; left: 5%; ">Go Back</button>
+{% endblock %}

@@ -1,0 +1,166 @@
+body {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+section {
+  /* https://stackoverflow.com/questions/28870932/how-to-remove-white-border-from-blur-background-image
+     https://www.w3schools.com/cssref/css_units.php
+     https://www.w3schools.com/howto/howto_css_blurred_background.asp */
+  background-image: url(https://i.pinimg.com/originals/62/50/df/6250df852217d33125432ca6d9ae0caf.jpg);
+  height: 100vh;
+  filter: blur(10px);
+  -webkit-filter: blur(7px);
+  transform: scale(1.6);
+  margin: 0;
+  padding: 0;
+
+}
+
+object {
+  background-image: url(https://media.istockphoto.com/id/1071588902/photo/abstract-blurred-gradient-background-in-bright-colors-colorful-smooth-illustration.jpg?b=1&s=170667a&w=0&k=20&c=7xE95vYr-sUKZMS3p-JyM1fheZVQs3DqpoGgc51yamw=);
+  height: 80vh;
+  width: 60vw;
+  filter: blur(20px);
+  -webkit-filter: blur(5px);
+  background-size: cover;
+  transform: scale(3, 4);
+  margin: 0;
+  padding: 0;
+}
+
+/* https://www.youtube.com/watch?v=jD_8FLePHZU&ab_channel=%23SmartCode */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* https://www.youtube.com/watch?v=jD_8FLePHZU&ab_channel=%23SmartCode */
+.fadetext {
+  position: absolute;
+  animation: fade-in 5s;
+  font-size: 45px;
+  font-family: Futura;
+  color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.regtext {
+  position: absolute;
+  font-size: 45px;
+  font-family: Futura;
+  color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fadeinout {
+  position: absolute;
+  animation: fade-in-out 4s;
+  font-size: 45px;
+  font-family: Futura;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  word-wrap: break-word;
+  animation-fill-mode: forwards;
+}
+
+/* https://stackoverflow.com/questions/27110432/animation-delay-on-page-load
+https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode */
+.faderegister {
+  position: absolute;
+  animation: fade-in 3s;
+  animation-delay: 2s;
+  font-size: 25px;
+  font-family: Futura;
+  color: white;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+/* combine the two */
+.fadelogin {
+  position: absolute;
+  animation: fade-in 3s;
+  animation-delay: 2s;
+  font-size: 25px;
+  font-family: Futura;
+  color: white;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 32px;
+  left: 10px;
+  width: 100%;
+  font-family: Futura;
+  color: white;
+}
+
+button [type="submit"] {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+/* office hours on 12/4 to figure out why bgimg was covering everything */
+.reglog {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* https://stackoverflow.com/questions/46798683/css-hide-element-after-5-seconds-show-it */
+
+.aurabtn {
+  position: absolute;
+  animation: fade-in 3s;
+  animation-delay: 7.5s;
+  font-size: 25px;
+  font-family: Futura;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-fill-mode: forwards;
+  color: black;
+}

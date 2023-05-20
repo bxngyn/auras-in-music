@@ -1,0 +1,16 @@
+{% include "background.html" %}
+
+<!--if session user id, display Hello, name. Find Aura. History. Log Out. else, display all elements in welcome.html-->
+
+{% block main %}
+    {% if session["user_id"] %}
+        <a href="/auras" class="fadetext" style="top: 45%; left: 50%; font-size: 50px;;">aura</p>
+        <a href="/history" class="fadetext" style="top: 55%; left: 50%; font-size: 25px;">history</a>
+        <a href="/logout" class="fadetext" style="top: 65%; left: 50%; font-size: 25px;">log out</a>
+    {% else %}
+        <h1 class="fadetext">Auras in Music</h1>
+        <a href="/register" class="faderegister button">Register</a>
+        <a href="/login" class="fadelogin button">Login</a>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% include "background.html" %}
+
+{% block main %}
+    <h1 class="fadetext" style="top: 33%; animation: none;">Login</h1>
+    <form action="/login" method="post" class="reglog">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary regtext" type="submit" style="top: 120%">Log In</button>
+    </form>
+    <h1 class="fadetext" style="top: 70%; animation: none; font-size: 20px;">Don't have an account yet? Register <a href="/register">here.</a></h1>
+{% endblock %}
