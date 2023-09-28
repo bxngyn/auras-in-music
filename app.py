@@ -18,11 +18,11 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # configuring shortened sqlite commands
-db = SQL("sqlite:///auras.db")
-db_nostalgic = SQL("sqlite:///nostalgicsongs.db")
-db_sad = SQL("sqlite:///sadhour.db")
-db_happy = SQL("sqlite:///happyvibe.db")
-db_ok = SQL("sqlite:///indiesongs.db")
+db = SQL("sqlite:///static/auras.db")
+db_nostalgic = SQL("sqlite:///static/nostalgicsongs.db")
+db_sad = SQL("sqlite:///static/sadhour.db")
+db_happy = SQL("sqlite:///static/happyvibe.db")
+db_ok = SQL("sqlite:///static/indiesongs.db")
 
 # citation: CS50 Finance PSet
 @app.after_request
