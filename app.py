@@ -1,15 +1,18 @@
 import os
 
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
-from helpers import apology, login_required
+from functools import wraps
 
 
 # Configure application
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='/static', 
+            static_folder='static',
+            template_folder='templates')
 
 # citation: CS50 Finance PSet
 # Configure session to use filesystem (instead of signed cookies)
@@ -18,13 +21,39 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # configuring shortened sqlite commands
-db = SQL("sqlite:///static/auras.db")
-db_nostalgic = SQL("sqlite:///static/nostalgicsongs.db")
-db_sad = SQL("sqlite:///static/sadhour.db")
-db_happy = SQL("sqlite:///static/happyvibe.db")
-db_ok = SQL("sqlite:///static/indiesongs.db")
+db = SQL("sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/auras.db"))
+db_nostalgic = SQL("sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/nostalgicsongs.db"))
+db_sad = SQL("sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/sadhour.db"))
+db_happy = SQL("sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/happyvibe.db"))
+db_ok = SQL("sqlite:///" + os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/indiesongs.db"))
 
-# citation: CS50 Finance PSet
+def apology(message, code=400):
+    """Render message as an apology to user."""
+    def escape(s):
+        """
+        Escape special characters.
+
+        https://github.com/jacebrowning/memegen#special-characters
+        """
+        for old, new in [("-", "--"), ("_", "__"), ("?", "~q"),
+                         ("%", "~p"), ("#", "~h"), ("\"", "''")]:
+            s = s.replace(old, new)
+        return s
+    return render_template("apology.html", top=code, bottom=escape(message)), code
+
+def login_required(f):
+    """
+    Decorate routes to require login.
+
+    https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
+    """
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get("user_id") is None:
+            return render_template("layout.html")
+        return f(*args, **kwargs)
+    return decorated_function
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -33,7 +62,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
 
 @app.route("/")
 @login_required
@@ -228,7 +256,7 @@ def happyvibes():
 @login_required
 def justok():
     """Runs when just ok button is pressed"""
-    
+
     # I made a database using this Spotify playlist: https://open.spotify.com/playlist/37i9dQZF1DX26DKvjp0s9M?si=ddb1001340b44507
     if request.method == "POST":
 
