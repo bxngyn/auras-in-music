@@ -51,12 +51,22 @@ object {
   }
 }
 
+@font-face {
+  font-family: 'Nexa Light';
+  src: url('Nexa-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Nexa Heavy';
+  src: url('Nexa-Heavy.ttf');
+}
+
 /* https://www.youtube.com/watch?v=jD_8FLePHZU&ab_channel=%23SmartCode */
 .fadetext {
   position: absolute;
   animation: fade-in 5s;
   font-size: 45px;
-  font-family: Futura;
+  font-family: 'Nexa Heavy';
   color: white;
   top: 40%;
   left: 50%;
@@ -66,7 +76,7 @@ object {
 .regtext {
   position: absolute;
   font-size: 45px;
-  font-family: Futura;
+  font-family: 'Nexa Light';
   color: white;
   top: 40%;
   left: 50%;
@@ -85,7 +95,7 @@ img {
   position: absolute;
   animation: fade-in-out 4s;
   font-size: 45px;
-  font-family: Futura;
+  font-family: 'Nexa Light';
   color: white;
   top: 50%;
   left: 50%;
@@ -101,7 +111,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode */
   animation: fade-in 3s;
   animation-delay: 2s;
   font-size: 25px;
-  font-family: Futura;
+  font-family: 'Nexa Light';
   color: white;
   top: 51%;
   left: 50%;
@@ -115,7 +125,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode */
   animation: fade-in 3s;
   animation-delay: 2s;
   font-size: 25px;
-  font-family: Futura;
+  font-family: 'Nexa Light';
   color: white;
   top: 60%;
   left: 50%;
@@ -130,7 +140,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode */
   height: 32px;
   left: 10px;
   width: 100%;
-  font-family: Futura;
+  font-family: 'Nexa Light';
   color: white;
 }
 
@@ -158,7 +168,7 @@ button [type="submit"] {
   animation: fade-in 3s;
   animation-delay: 7.5s;
   font-size: 25px;
-  font-family: Futura;
+  font-family: 'Nexa Heavy';
   transform: translate(-50%, -50%);
   opacity: 0;
   animation-fill-mode: forwards;
