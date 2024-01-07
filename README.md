@@ -1,6 +1,6 @@
 Auras in Music
 ===================
-A flask web application that utilizes user input to randomly output song from Spotify databases.
+A flask web application that utilizes user input to randomly output song from Spotify databases. <br>
 Live Website: https://bxngyn.pythonanywhere.com/
 
 
