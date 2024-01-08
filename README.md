@@ -3,11 +3,6 @@ Auras in Music
 A flask web application that utilizes user input to randomly output song from Spotify databases. <br>
 Live Website: https://bxngyn.pythonanywhere.com/
 
-Visuals
------
-![](https://github.com/bxngyn/auras-in-music/blob/main/resource/homepage.gif)
-
-
 Usage
 -----
 Upon arriving at the website, the user will have two options: login or register. With registering, there is currently no requirement implemented on the amount or type of characters a username or password needs. However, the code does restrict multiple duplicate usernames between users of the website and does check if a user tries to register without a valid username / password / confirmation password. In case a user accidentally clicks on login but doesn't have an account yet, there is a button below the form to go directly to the register page instead. This is also the same vice versa. After registering, the user will be brought to the main home screen, which contains three buttons: "aura", "history", and "log out".
